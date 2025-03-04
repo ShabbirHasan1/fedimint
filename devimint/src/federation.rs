@@ -850,7 +850,9 @@ impl Federation {
                     .map_err(ControlFlow::Continue)?,
                 "dev",
                 "api",
-                "module_{LEGACY_HARDCODED_INSTANCE_ID_WALLET}_block_count"
+                "--module",
+                LEGACY_HARDCODED_INSTANCE_ID_WALLET,
+                "block_count"
             )
             .run()
             .await

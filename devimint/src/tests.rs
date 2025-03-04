@@ -1609,7 +1609,9 @@ pub async fn guardian_backup_test(dev_fed: DevFed, process_mgr: &ProcessManager)
         "api",
         "--peer-id",
         PEER_TO_TEST.to_string(),
-        "module_{LEGACY_HARDCODED_INSTANCE_ID_WALLET}_block_count",
+        "--module",
+        "wallet",
+        "block_count",
     )
     .out_json()
     .await?["value"]
